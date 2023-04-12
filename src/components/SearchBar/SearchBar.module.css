@@ -1,0 +1,29 @@
+.inputSearchBar {
+    background-color:#242c3b;
+    height: 30px;
+    color: white;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 10px;
+}
+
+.botonSearchBar {
+    height: 30px;
+    margin-left: 5px;
+    background-color: #242c3b;
+    color: white;
+    border-radius: 10px;
+    font-family: cursive;
+    cursor: pointer;
+
+}
+
+.divSearchBar {
+    background-color:#bbedfa;
+}
+
+.inputSearchBar::placeholder {
+    color:#bbedfa;
+    font-family: cursive;
+
+}

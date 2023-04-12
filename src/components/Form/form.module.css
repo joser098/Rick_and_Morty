@@ -1,0 +1,60 @@
+body {
+    background-image: url(./img/Rick.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+form {
+    background-color: #bbedfa;
+    margin-top: 240px;
+    margin-left: 300px;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    opacity: 90%;
+}
+
+.labelForm {
+    color:  #242c3b ;
+    font-family:cursive;
+    font-size: 15px;
+    font-weight: 600; 
+
+}
+
+.inputForm {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 300px;
+    height: 25px;
+    border-color: #242c3b;
+    opacity: 90%;
+}
+
+.botonForm {
+    height: 30px;
+    width: 100px;
+    background-color: #242c3b;
+    border-radius: 10px;
+    color: #bbedfa;
+    font-family: cursive;
+    margin-top: 20px;
+}
+
+.titulo {
+font-size: larger;
+font-weight: 800;
+font-family: cursive;
+}
+
+.errorForm {
+    margin: 0px;
+    font-size: small;
+    color: red;
+}
+
+
+
+
