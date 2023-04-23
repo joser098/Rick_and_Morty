@@ -1,0 +1,9 @@
+.select {
+    height: 30px;
+    width: 100px;
+    background-color: #6f787f ;
+    border-radius: 10px;
+    color: #bbedfa;
+    font-family: cursive;
+    margin-top: 20px;
+}

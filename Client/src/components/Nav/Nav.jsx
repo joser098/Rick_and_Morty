@@ -9,7 +9,7 @@ const Nav = ({onSearch, setAccess}) => {
         setAccess(false);
     }
 
-    const ramdom = Math.ceil(Math.random()*5);
+    const ramdom = Math.ceil(Math.random()*826);
     return (
         <div className={styles.divNav}>
         <SearchBar onSearch={onSearch} />
