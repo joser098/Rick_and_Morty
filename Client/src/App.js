@@ -24,14 +24,19 @@ function App() {
 // let EMAIL = "jxse@gmail.com";
 // let PASSWORD = 'clave123';
 
-const login = (userData) => {
+const login = async (userData) => {
    const { email, password } = userData;
    const URL = 'http://localhost:3001/rickandmorty/login/';
-   axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-      const { access } = data;
-      setAccess(access);
-      access && navigate('/home');
-   });
+
+   try {
+      const { data }= await axios(URL + `?email=${email}&password=${password}`)
+         const { access } = data;
+         setAccess(access);
+         access && navigate('/home');  
+      } 
+   catch (error) {
+      return error.message
+   }
 }
 
 useEffect(() => {
@@ -39,20 +44,24 @@ useEffect(() => {
 }, [access, navigate]);
 
 
-const onSearch = (id) => {
+const onSearch = async (id) => {
 if(current.includes(id)){
    return window.alert('No se puede repetir id')
 } 
 
 current.push(id);
-
-   axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-      if (data.name) {
-         setCharacters((oldChars) => [...oldChars, data]);
-      } else {
-         window.alert('¡No hay personajes con este ID!');
-      }
-   });
+try {
+   const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+   
+         if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+         } else {
+            window.alert('¡No hay personajes con este ID!');
+         }  
+      } 
+catch (error) {
+   return error.message
+ }   
 }
 
 const onClose = (id) => {
