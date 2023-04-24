@@ -1,6 +1,7 @@
 const express = require("express");
 const server = express();
 const routes = require('./routes/index')
+const morgan = require('morgan')
 
 
 server.use((req, res, next) => {
@@ -10,13 +11,14 @@ server.use((req, res, next) => {
         'Access-Control-Allow-Headers',
         'Origin, X-Requested-With, Content-Type, Accept'
         );
-        res.header(
+    res.header(
             'Access-Control-Allow-Methods',
             'GET, POST, OPTIONS, PUT, DELETE'
             );
-            next();
-        });
-        
+    next();
+ });
+    
+ server.use(morgan('dev'))
  server.use(express.json());
  server.use("/rickandmorty", routes)
         

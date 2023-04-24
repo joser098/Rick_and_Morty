@@ -15,9 +15,9 @@ const getCharById = (req, res) => {
       gender: data.gender
     }
 
-    id
-    ? res.json(character)
-    : res.status(404).json("Not fount")
+    id && data.name
+    ? res.status(200).json(character)
+    : res.status(404).send("Not found")
   })
   .catch((error) => res.status(500).json({error: error.message}))
 }
