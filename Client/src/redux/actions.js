@@ -6,13 +6,14 @@ export const addFav = (character) => {
     return async (dispatch) => {
       try {
          const { data } = await axios.post(endpoint, character)
+         if(!data.length) throw Error("No hay personajes")
          return dispatch({
                type: ADD_FAV,
                payload: data,
             });
          } 
       catch (error) { 
-         return error.message
+         console.log(error.message)
       }
    };
 };
@@ -22,6 +23,7 @@ export const removeFav = (id) => {
     return async (dispatch) => {
       try {
          const { data } = await axios.delete(endpoint)
+         
             return dispatch({
                type: REMOVE_FAV,
                payload: data,

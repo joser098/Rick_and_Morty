@@ -6,6 +6,8 @@ const getCharById = async (req, res) => {
     const { id } = req.params
     const { data } = await axios(`${URL}${id}`)
 
+    if(!data.name) throw new Error ("ID not found");
+
       const character = {
         id: id,
         status: data.status,
@@ -15,18 +17,16 @@ const getCharById = async (req, res) => {
         image: data.image,
         gender: data.gender
       }
-  
-      if(id && data.name) return res.status(200).json(character);
+      return res.status(200).json(character);
       
-      return res.status(404).send("Not found");
     } 
 
   catch (error) { 
-     return res.status(500).json({error: error.message})
+    return error.message.includes('ID')
+    ? res.status(404).send(error.message)
+    : res.status(500).send(error.response.data.error)
     }
 }
-
-
 
 
 module.exports = getCharById;
