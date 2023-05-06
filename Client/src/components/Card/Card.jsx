@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from './Card.module.css'
 import { addFav, removeFav } from "../../redux/actions";
 import { useState, useEffect } from "react";
@@ -34,9 +34,9 @@ const Card = ({id, name, status, species, gender, origin, image, onClose, addFav
 
          <button className={styles.botonCard} onClick={() => {onClose(id)}}>X</button>
 
-         <Link to={`/detail/${id}`}>
+         <NavLink to={`/detail/${id}`}>
          <h2 className={styles.name}>{name}</h2>
-         </Link>
+         </NavLink>
          
 
          {/* <h2 className={styles.status} >{status}</h2>

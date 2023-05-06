@@ -28,6 +28,7 @@ const login = async (userData) => {
       const { email, password } = userData;
       const { data }= await axios(URL + `?email=${email}&password=${password}`)
       const { access } = data;
+      console.log(access);
          setAccess(access);
          access && navigate('/home');  
       } 

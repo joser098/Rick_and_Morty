@@ -1,53 +1,35 @@
 .divCard{
-    
-    width: 300px;
-    height: 300px;
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    width: 230px;
+    height: 250px;
 }
 
 .name {
     background-color: #242c3b;
-    position: absolute;
     color: #bbedfa;
     font-size: medium;
-    top: 260px;
-    left: 20px;
-    bottom: 0px;
-    right: 0px;
     width: 100px;
     height: 25px; 
+    margin: auto;
+    text-decoration: none;
 } 
 .image {
-    position: absolute;
+    border-radius: 20px;
     width: 200px;
-    height: 200px;
-    top: 100px;
-    left: 20px;
-    bottom: 100px;
-    right: 100px;
-    
+    height: 200px; 
 }
 
 .botonCard {
     background-color: red;
-    position: absolute;
     padding: 8px;
     border-radius:30px;
-    top: 100px;
-    left: 190px;
-    bottom: 100px;
-    right: 100px;
     width: 30px;
     height: 30px;
 
 }
 
 .clickFav {
-    position: absolute;
     border-radius:30px;
-    top: 100px;
-    left: 20px;
-    bottom: 100px;
-    right: 100px;
-    width: 30px;
-    height: 30px;
 }
